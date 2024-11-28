@@ -20,12 +20,13 @@ class Program
             var newWeather = new Weathermodel
             {
                 date = DateTime.Now,
-                Location = "Södertälje",
+                Location = "Stockholm",
                 Temprature = averageTemperature,
                 Humidity = averageHumidity,
                 Moldrisk = riskDescription,
-                Winter = "5 december 2023",
-                Autumn = "22 september 2024"
+                Autumn = "4 september 2024",
+                Winter = "2 december 2023",
+              
             };
 
 
@@ -44,11 +45,11 @@ class Program
                 
                 if (!fileExists)
                 {
-                    writer.WriteLine("date,Location,Temprature,Humidity,Moldrisk,Winter,Autumn");
+                    writer.WriteLine("Date,Location,Temprature,Humidity,Moldrisk,Autumn,Winter");
                 }
 
 
-                writer.WriteLine($"{newWeather.date},{newWeather.Location},{newWeather.Temprature},{newWeather.Humidity},{newWeather.Moldrisk},{newWeather.Winter},{newWeather.Autumn}");
+                writer.WriteLine($"{newWeather.date}, {newWeather.Location}, {newWeather.Temprature}, {newWeather.Humidity}, {newWeather.Moldrisk}, {newWeather.Winter}, {newWeather.Autumn}");
             }
 
             Console.WriteLine("A weather record has been saved in the database and TempfuktData.csv!");

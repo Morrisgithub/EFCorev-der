@@ -17,7 +17,7 @@ namespace Väder.DataAccess
                 if (Humidity < 70 || Temperature < 5)
                 {
                     riskvalue = 1.0d;
-                    riskDescription = "Låg risk";
+                    riskDescription = "Low risk";
                 }
                 else if (Humidity >= 70 && Humidity <= 85 && Temperature >= 5 && Temperature <= 15)
                 {
@@ -27,12 +27,12 @@ namespace Väder.DataAccess
                 else if (Humidity > 85 && Temperature > 15)
                 {
                     riskvalue = 4.0d;
-                    riskDescription = "Hög risk";
+                    riskDescription = "High risk";
                 }
                 else
                 {
                     riskvalue = 0.5d;
-                    riskDescription = "Mycket låg risk";
+                    riskDescription = "Much low risk";
                 }
 
                 return (riskvalue, riskDescription);
