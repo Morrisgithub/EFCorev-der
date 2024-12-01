@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Väder.Migrations
 {
     /// <inheritdoc />
-    public partial class WeatherDB : Migration
+    public partial class NewDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,13 +17,10 @@ namespace Väder.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Temprature = table.Column<double>(type: "float", nullable: false),
-                    Humidity = table.Column<int>(type: "int", nullable: false),
-                    Moldrisk = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Winter = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Autumn = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Temperature = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Humidity = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {

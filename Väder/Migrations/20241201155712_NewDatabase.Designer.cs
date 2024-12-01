@@ -12,8 +12,8 @@ using Väder.DataAccess;
 namespace Väder.Migrations
 {
     [DbContext(typeof(Vädercontext))]
-    [Migration("20241128110632_WeatherDB")]
-    partial class WeatherDB
+    [Migration("20241201155712_NewDatabase")]
+    partial class NewDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,30 +33,18 @@ namespace Väder.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Autumn")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("Humidity")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Humidity")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Moldrisk")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Temprature")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Winter")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("date")
-                        .HasColumnType("datetime2");
+                    b.Property<decimal>("Temperature")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 

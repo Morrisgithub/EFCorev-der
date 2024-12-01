@@ -8,15 +8,12 @@ namespace Väder.DataAccess
 {
     public class Weathermodel
     {
-        public int Id { get; set; }
-        public DateTime date { get; set; }
-        public string Location { get; set; }
-        public double Temprature { get; set; }
-        public int Humidity { get; set; }
-        public string Moldrisk { get; set; }
-        public string Winter { get; set; }
-        public string Autumn { get; set; }
+        
+            public int Id { get; set; }
+            public DateTime Date { get; set; }
+            public string Location { get; set; }
+            public decimal Temperature { get; set; }
+            public decimal Humidity { get; set; }
 
-
+        }
     }
-}
